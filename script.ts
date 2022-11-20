@@ -4,6 +4,8 @@ import path from "path";
 import dotenv from "dotenv";
 import { body, validationResult } from "express-validator";
 
+const port = process.env.PORT || 3001;
+
 dotenv.config();
 const prisma = new PrismaClient();
 const app = express();
@@ -81,7 +83,6 @@ app.post(
 );
 
 // const port = 3001;
-const port = process.env.SERVER_PORT;
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
 });
