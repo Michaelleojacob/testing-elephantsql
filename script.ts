@@ -17,6 +17,7 @@ app.use(express.json());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use("/views", express.static(__dirname + "/views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // async function main() {
@@ -82,7 +83,6 @@ app.post(
   }
 );
 
-// const port = 3001;
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
 });
